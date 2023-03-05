@@ -7,7 +7,7 @@ from ..items import ClasscentralcloneItem
 
 
 class WebpageScrapeSpider(CrawlSpider):
-    name = "webpage_scrape"
+    name = "assignment"
     allowed_domains = ["www.classcentral.com"]
     start_urls = ["http://www.classcentral.com/"]
 
