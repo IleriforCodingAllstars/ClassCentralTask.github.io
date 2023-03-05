@@ -8,7 +8,7 @@ from ..items import ClasscentralcloneItem
 
 class WebpageSpider(scrapy.Spider):
     name = "webpage"
-    allowed_domains = ["www.classcentral.com"]
+    allowed_domains = [""]
 
     start_urls = [
         'https://www.classcentral.com/'
@@ -33,7 +33,6 @@ class WebpageSpider(scrapy.Spider):
             yield Request(page.url, callback=self.parse_item)
 
     def parse_item(self, response):
-
         # Saving the pages
         page = response.url.split("/")[-2]
         filename = f'{page}.html'
@@ -46,4 +45,3 @@ class WebpageSpider(scrapy.Spider):
         item["image_urls"] = [img_url]
         item["image_urls"] = [svg_url]
         yield item
-

@@ -15,7 +15,7 @@ NEWSPIDER_MODULE = "ClassCentralClone.spiders"
 
 
 # Crawl responsibly by identifying yourself (and your website) on the user-agent
-#USER_AGENT = "ClassCentralClone (+http://www.yourdomain.com)"
+USER_AGENT = "Mozilla/5.0 (iPad; CPU OS 12_2 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Mobile/15E148"
 
 # Obey robots.txt rules
 ROBOTSTXT_OBEY = True
@@ -39,7 +39,7 @@ ROBOTSTXT_OBEY = True
 
 # Override the default request headers:
 DEFAULT_REQUEST_HEADERS = {
-    "Accept": "Mozilla/5.0 (Windows NT 6.1; Win64; x64; rv:47.0) Gecko/20100101 Firefox/47.0",
+    "Accept": "text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8",
     "Accept-Language": "en",
 }
 
@@ -67,7 +67,7 @@ DOWNLOADER_MIDDLEWARES = {
 
 ITEM_PIPELINES = {
     ClasscentralclonePipeline: 300,
-    "ClassCentralClone.ClassCentralClone.pipelines.images.ImagesPipeline": 1,
+    "scrapy.pipelines.images.ImagesPipeline": 1,
 }
 
 # Download Path
@@ -99,3 +99,6 @@ AUTOTHROTTLE_START_DELAY = 10
 REQUEST_FINGERPRINTER_IMPLEMENTATION = "2.7"
 TWISTED_REACTOR = "twisted.internet.asyncioreactor.AsyncioSelectorReactor"
 FEED_EXPORT_ENCODING = "utf-8"
+
+# Enable maximum depth that will be allowed to crawl for the site
+# DEPTH_LIMIT = 0
